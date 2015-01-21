@@ -38,13 +38,13 @@
 					</relativeLocation>
 					
 				</Location>
-				<Speed Value="9" Units="kts" />
+				<Speed Value="8" Units="kts" />
 			</Status>
 			<Waterfall Name="subject route">
 				<Move Name="leg one" Course="320">
 					<Vector Value="5.7" Units="nm" /></Move>
 				<Move Name="leg two" Course="350">
-					<Vector Value="9.75" Units="nm" /></Move>
+					<Vector Value="8" Units="nm" /></Move>
 				<Move Name="leg three" Course="310">
 					<Vector Value="4" Units="nm" /></Move>
 			</Waterfall>
@@ -84,15 +84,13 @@
 					</relativeLocation>
 					
 				</Location>
-				<Speed Value="12" Units="kts" />
+				<Speed Value="8" Units="kts" />
 			</Status>
 			<Waterfall Name="sensor route">
-				<Move Name="leg one" Course="200">
-					<Vector Value="5" Units="nm" /></Move>
-				<Move Name="leg two" Course="310">
-					<Vector Value="6" Units="nm" /></Move>
-				<Move Name="leg three" Course="60">
-					<Vector Value="10" Units="nm" /></Move>
+				<Move Name="leg one" Course="270">
+					<Vector Value="8" Units="nm" /></Move>
+				<Move Name="leg two" Course="220">
+					<Vector Value="12" Units="nm" /></Move>
 			</Waterfall>
 
 
