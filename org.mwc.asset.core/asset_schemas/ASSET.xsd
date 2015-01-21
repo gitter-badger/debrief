@@ -3571,6 +3571,33 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="CoreFileObserverType"> </xs:extension>
+			<xs:sequence>
+				<xs:element name="SubjectToTrack" type="TargetTypeType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The type of target we want to record a
+							narrative full
+							(or omit to record all)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="record_detections" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Whether to record detections to file
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="record_decisions" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Whether to record decisions to file
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="record_positions" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Whether to record positions to file
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="DebriefReplayObserverType">

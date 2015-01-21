@@ -23,27 +23,80 @@ package ASSET.Util.XML.Control.Observers;
  * @version 1.0
  */
 
-import ASSET.Scenario.Observers.CoreObserver;
+import ASSET.Models.Decision.TargetType;
 import ASSET.Scenario.Observers.RecordToFileObserverType;
-import ASSET.Scenario.Observers.Recording.CSVTrackObserver;
 import ASSET.Scenario.Observers.ScenarioObserver;
+import ASSET.Scenario.Observers.Recording.CSVTrackObserver;
+import ASSET.Util.XML.Decisions.Util.TargetTypeHandler;
 
 abstract class CSVTrackObserverHandler extends CoreFileObserverHandler
 {
 
   private final static String type = "CSVTrackObserver";
+	private Boolean _recordDec;
+	private Boolean _recordDet;
+	private Boolean _recordPos;
+	private TargetType _toTrack;
 
+  private static final String RECORD_DETECTIONS = "record_detections";
+  private static final String RECORD_DECISIONS = "record_decisions";
+  private static final String RECORD_POSITIONS = "record_positions";
+  private static final String TARGET_TYPE = "SubjectToTrack";
+	
   public CSVTrackObserverHandler()
   {
     super(type);
+    
+    addAttributeHandler(new HandleBooleanAttribute(RECORD_DETECTIONS)
+    {
+      public void setValue(String name, final boolean val)
+      {
+      	_recordDet = val;
+      }
+    });
+    addAttributeHandler(new HandleBooleanAttribute(RECORD_DECISIONS)
+    {
+      public void setValue(String name, final boolean val)
+      {
+      	_recordDec = val;
+      }
+    });
+    addAttributeHandler(new HandleBooleanAttribute(RECORD_POSITIONS)
+    {
+      public void setValue(String name, final boolean val)
+      {
+      	_recordPos = val;
+      }
+    });
 
+    addHandler(new TargetTypeHandler(TARGET_TYPE)
+    {
+      public void setTargetType(TargetType type1)
+      {
+      	_toTrack = type1;
+      }
+    });
   }
 
   public void elementClosed()
   {
     // create ourselves
-    final CoreObserver timeO = new CSVTrackObserver(_directory, _fileName, false, _name, _isActive);
+    final CSVTrackObserver timeO = new CSVTrackObserver(_directory, _fileName, false, _name, _isActive);
 
+    if(_recordDec != null)
+    timeO.setRecordDecisions(_recordDec);
+    if(_recordDet != null)
+    timeO.setRecordDetections(_recordDet);
+    if(_recordPos != null)
+    timeO.setRecordPositions(_recordPos);
+    if(_toTrack != null)
+    	timeO.setSubjectToTrack(_toTrack);
+    
+    _recordDec = null;
+    _recordDet = null;
+    _recordPos = null;
+    _toTrack = null;
+    
     setObserver(timeO);
 
     // and reset

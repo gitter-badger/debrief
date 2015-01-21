@@ -15,6 +15,7 @@
 package ASSET.Scenario.Observers.Recording;
 
 import ASSET.Models.Decision.TargetType;
+import ASSET.Models.Detection.DetectionEvent;
 import ASSET.Models.Detection.DetectionList;
 import ASSET.Models.Movement.HighLevelDemandedStatus;
 import ASSET.Models.Movement.SimpleDemandedStatus;
@@ -29,6 +30,7 @@ import MWC.GenericData.WorldLocation;
 import MWC.GenericData.WorldSpeed;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 public class CSVTrackObserver
   extends RecordStatusToFileObserverType
@@ -195,15 +197,63 @@ public class CSVTrackObserver
    */
   protected void writeTheseDetectionDetails(ParticipantType pt, DetectionList detections, long dtg)
   {
-    //To change body of implemented methods use File | Settings | File Templates.
+  	
+		Iterator<DetectionEvent> iter = detections.iterator();
+		while (iter.hasNext())
+		{
+			DetectionEvent de = (DetectionEvent) iter.next();
+			
+				outputThisDetection(de.getSensorLocation(), de.getTime(), pt.getName(),
+						pt.getCategory(), de.getBearing(), de.getRange(), pt.getSensorFit()
+								.getSensorWithId(de.getSensor()).getName(), de.toString());
+		}
+  	
+  	
   }
 
   public void outputThisDetection(WorldLocation loc, long dtg, String hostName, Category hostCategory,
-                                  double bearing, WorldDistance range, String sensor_name,
+                                  Float bearing, WorldDistance range, String sensor_name,
                                   String label)
   {
-    // don't bother
-    // todo: to implement (output this detection)
+
+    final StringBuffer buff = new StringBuffer();
+
+    String res;
+
+    // convert the location to flat-earth yards
+    double yM = MWC.Algorithms.Conversions.Degs2m(loc.getLat());
+    double xM = MWC.Algorithms.Conversions.Degs2m(loc.getLong());
+    double zM = -loc.getDepth();
+
+    long theTime = dtg;
+
+    final String dateStr = MWC.Utilities.TextFormatting.DebriefFormatDateTime.toString(theTime);
+
+    buff.append(dateStr);
+    buff.append(",");
+    buff.append(df.format(xM));
+    buff.append(",");
+    buff.append(df.format(yM));
+    buff.append(",");
+    buff.append(df.format(zM));
+    buff.append(",");
+    buff.append(df.format(bearing));
+
+    res = buff.toString();
+
+    if (res != null)
+    {
+      try
+      {
+        _os.write(res);
+        _os.write("" + System.getProperty("line.separator"));
+        _os.flush();
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
   }
 
   /**
