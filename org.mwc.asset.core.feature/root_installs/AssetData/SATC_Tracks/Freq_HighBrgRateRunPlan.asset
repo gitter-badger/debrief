@@ -67,12 +67,12 @@
 						<DetectionRange Value="25" Units="nm" />
 					</TypedRangeDoublet>
 				</TypedCookieSensor>
-				<NarrowbandSensor Name="NB_FREQ" Working="true"
+				<NarrowbandSensor Name="NB_FREQ" Working="false"
 					HasBearing="false">
 					<SteadyTime Value="0.0" Units="millis" />
 				</NarrowbandSensor>
 			</SensorFit>
-			<Status Course="40" Fuel="100">
+			<Status Course="205" Fuel="100">
 				<Location>
 					<shortLocation Lat="60.2" Long="0.2"></shortLocation>
 				</Location>
