@@ -3,11 +3,22 @@
  */
 package org.qinetiq.data_feed.feed;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.util.Date;
 
 import org.mwc.debrief.data_feed.views.LiveFeedViewer;
 import org.mwc.debrief.data_feed.views.RealTimeProvider;
 
+import Debrief.ReaderWriter.Replay.ImportReplay;
+import Debrief.Wrappers.FixWrapper;
+import Debrief.Wrappers.TrackWrapper;
+import MWC.GenericData.HiResDate;
+import MWC.GenericData.WorldDistance;
+import MWC.GenericData.WorldLocation;
+import MWC.GenericData.WorldVector;
+import MWC.TacticalData.Fix;
+import MWC.TacticalData.Track;
 import MWC.Utilities.Timer.TimerListener;
 
 /**
@@ -26,6 +37,14 @@ public class QinetiQDataProvider implements RealTimeProvider, TimerListener
 	 * 
 	 */
 	private LiveFeedViewer _myHost;
+
+	private HiResDate _dtg;
+
+	private WorldLocation _lastLoc;
+
+	private ImportReplay _iff;
+
+	private TrackWrapper _trk;
 
 	public QinetiQDataProvider()
   {
@@ -101,37 +120,49 @@ public class QinetiQDataProvider implements RealTimeProvider, TimerListener
 		
 		// ok,  fire the new data event
 		
-//		if(_dtg == null)
-//		{
-//			_dtg = new HiResDate(new Date());
-//			_lastLoc = new WorldLocation(50.65, -1.1, 0);
-//			_iff = new ImportReplay();
-//			_trk = new TrackWrapper();
-//			Track trk = new Track();			
-//			trk.setName("2076 TRACK");
-//			_trk.setTrack(trk);
-//			_trk.setColor(Color.RED);
-//		}
-//		else
-//		{
-//			// ok, move forward
-//			_dtg = new HiResDate((_dtg.getMicros() / 1000) + 60000);
-//			WorldVector newVec = new WorldVector(1 + Math.random() * 0.5, new WorldDistance(12, WorldDistance.METRES), 
-//					new WorldDistance(300, WorldDistance.METRES));
-//			_lastLoc = new WorldLocation(_lastLoc.add(newVec));
-//		}			
-//				
-//		Fix fix = new Fix(_dtg, _lastLoc, 22, 12);
-//		FixWrapper fw = new FixWrapper(fix);
-//		fw.setTrackWrapper(_trk);
-//		
-//		// ok, now export it
-//		String theStr = _iff.exportThis(fw);
-//		
-//		_myHost.insertData(theStr);
-//		_myHost.showMessage("DATA RX");
+		if(_dtg == null)
+		{
+			_dtg = new HiResDate(new Date());
+			_lastLoc = new WorldLocation(50.65, -1.1, 0);
+			_iff = new ImportReplay(){
+
+				@Override
+				protected void addThisToExport(String txt)
+				{
+					newMessage(txt);
+				}};
+			_trk = new TrackWrapper();
+			_trk.setName("Dummy Track");
+			_trk.setColor(Color.RED);
+		}
+		else
+		{
+			// ok, move forward
+			_dtg = new HiResDate((_dtg.getMicros() / 1000) + 60000);
+			WorldVector newVec = new WorldVector(1 + Math.random() * 0.5, 
+					new WorldDistance(12, WorldDistance.METRES), 
+					new WorldDistance(300, WorldDistance.METRES));
+			_lastLoc = new WorldLocation(_lastLoc.add(newVec));
+		}			
+				
+		Fix fix = new Fix(_dtg, _lastLoc, 22, 12);
+		FixWrapper fw = new FixWrapper(fix);
+		fw.setTrackWrapper(_trk);
+		
+		// ok, now export it
+		_iff.exportThis(fw);
+		
 	}	
 	
+
+	protected void newMessage(String txt)
+	{
+		if (_myHost != null)
+		{
+			_myHost.insertData(txt);
+			_myHost.showMessage("DATA RX");
+		}
+	}
 
 	/**
 	 * ok, start auto-stepping forward through the serial
