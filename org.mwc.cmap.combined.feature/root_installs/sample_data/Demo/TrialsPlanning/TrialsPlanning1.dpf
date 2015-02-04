@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<plot xmlns="http://www.debrief.info/plot" Created="Tue Feb 03 11:09:37 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
-<details Text="Saved with Debrief version dated Tue Feb 03 10:58:53 GMT 2015"/>
+<plot xmlns="http://www.debrief.info/plot" Created="Wed Feb 04 16:33:48 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
+<details Text="Saved with Debrief version dated Tue Feb 03 15:45:03 GMT 2015"/>
 <session>
 <layers>
 <layer LineThickness="0" Name="Chart Features" Visible="true">
 <grid PlotLabels="true" Visible="true">
 <font Bold="false" Family="Sans Serif" Italic="false" Size="8"/>
-<Delta Units="nm" Value="1.0000000"/>
-<colour CustomBlue="77" CustomGreen="77" CustomRed="77" Value="custom"/>
+<Delta Units="nm" Value="5.0000000"/>
+<colour Value="GREY"/>
 </grid>
 </layer>
 <composite_track InterpolatePoints="false" LabelIntervalMillis="900000" LineStyle="0" LineThickness="2" LinkPositions="true" Name="SUBJECT_PLANNED_DONE" NameAtStart="true" NameLocation="Right" NameVisible="false" PlotArrayCentre="false" PositionsVisible="true" SensorsVisible="true" SolutionsVisible="true" StartTime="100112 120000" Symbol="Submarine" SymbolIntervalMillis="300000" Visible="false">
@@ -30,7 +30,7 @@
 <shortLocation Depth="0.000" Lat="0.0000002" Long="-30.0000119"/>
 </Origin>
 </composite_track>
-<externalDatafile DataType="NELayer" LayerName="Natural Earth" LayerPath="" Visible="false"/>
+<externalDatafile DataType="NELayer" LayerName="Natural Earth" LayerPath="" Visible="true"/>
 <layer LineThickness="0" Name="Markers" Visible="true">
 <textlabel Label="Red Finish" LabelLocation="Bottom" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
 <colour Value="PURPLE"/>
@@ -46,7 +46,7 @@
 <shortLocation Depth="0.000" Lat="0.0000002" Long="-30.0001101"/>
 </centre>
 </textlabel>
-<textlabel Label="Red Turn" LabelLocation="Top" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
+<textlabel Label="Fixed Sensor" LabelLocation="Top" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
 <colour Value="PURPLE"/>
 <font Bold="false" Family="Sans Serif" Italic="false" Size="9"/>
 <centre>
@@ -57,16 +57,14 @@
 </layers>
 <projection Border="1.100" PrimaryOriented="false" PrimaryOrigin="false" Type="Flat">
 <tl>
-<shortLocation Depth="0.000" Lat="0.0558316" Long="-30.2500856"/>
+<shortLocation Depth="0.000" Lat="0.1192306" Long="-30.1862729"/>
 </tl>
 <br>
-<shortLocation Depth="0.000" Lat="-0.1482206" Long="-29.9166540"/>
+<shortLocation Depth="0.000" Lat="-0.1513772" Long="-29.9010195"/>
 </br>
 </projection>
 <gui>
-<tote>
-<secondary Name="SUBJECT"/>
-</tote>
+<tote/>
 <component Type="Stepper">
 <property Name="GREEN" Value="64"/>
 <property Name="DateFormat" Value="ddHHmm"/>
