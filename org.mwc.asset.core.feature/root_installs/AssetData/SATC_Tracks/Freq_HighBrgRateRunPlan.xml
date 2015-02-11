@@ -7,28 +7,28 @@
 			<Duration Value="120" Units="minutes"></Duration>
 		</TimeObserver>
 		<DebriefReplayObserver Name="HiFreq_RedTrack"
-			record_detections="true" record_positions="true" Active="false"
+			record_detections="true" record_positions="true" Active="true"
 			record_decisions="false" file_name="HiFreq_RedTrack">
 			<SubjectToTrack>
 				<Type Name="RED" />
 			</SubjectToTrack>
 		</DebriefReplayObserver>
 		<DebriefReplayObserver Name="HiFreq_BlueSensor"
-			record_detections="true" record_positions="false" Active="false"
+			record_detections="true" record_positions="false" Active="true"
 			record_decisions="false" file_name="HiFreq_BlueSensor">
 			<SubjectToTrack>
 				<Type Name="BLUE" />
 			</SubjectToTrack>
 		</DebriefReplayObserver>
 		<DebriefReplayObserver Name="HiFreq_BlueCuts"
-			record_detections="false" record_positions="true" Active="false"
+			record_detections="false" record_positions="true" Active="true"
 			record_decisions="false" file_name="HiFreq_BlueTrack">
 			<SubjectToTrack>
 				<Type Name="BLUE" />
 			</SubjectToTrack>
 		</DebriefReplayObserver>
 		<CSVTrackObserver Name="HiFreq_RedTrack"
-			record_detections="true" record_positions="true" Active="false"
+			record_detections="true" record_positions="true" Active="true"
 			record_decisions="false" file_name="HiFreq_RedTrack">
 			<SubjectToTrack>
 				<Type Name="RED" />
@@ -42,7 +42,7 @@
 			</SubjectToTrack>
 		</CSVTrackObserver>
 		<CSVTrackObserver Name="HiFreq_BlueCuts"
-			record_detections="false" record_positions="true" Active="false"
+			record_detections="false" record_positions="true" Active="true"
 			record_decisions="false" file_name="HiFreq_BlueTrack">
 			<SubjectToTrack>
 				<Type Name="BLUE" />

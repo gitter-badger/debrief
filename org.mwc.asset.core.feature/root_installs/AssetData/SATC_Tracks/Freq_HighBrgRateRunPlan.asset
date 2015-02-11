@@ -2,7 +2,7 @@
 <Scenario Name="Narrowband Tracking Scenario (High_BRate)" xmlns="http://www.mwc.org/asset"
 	StartTime="2010-01-12T12:00:00Z" Created="2010-01-19T12:13:14Z"
 	ShowActivity="false" ShowStatus="true">
-	<StepTime Units="seconds" Value="50"></StepTime>
+	<StepTime Units="seconds" Value="47"></StepTime>
 	<Environment Name="token" AtmosphericAttenuation="VERY_CLEAR"
 		SeaState="1">
 		<VisualLookupEnvironment Name="Easy to see">
@@ -33,8 +33,8 @@
 			<Status Course="320" Fuel="100">
 				<Location>
 					<relativeLocation>
-						<North Value="0.0" Units="m" />
-						<East Value="0.0" Units="m" />
+						<North Value="12000" Units="m" />
+						<East Value="16000" Units="m" />
 					</relativeLocation>
 					
 				</Location>
@@ -80,7 +80,7 @@
 				<Location>
 					<relativeLocation>
 						<North Value="24000" Units="m" />
-						<East Value="12000" Units="m" />
+						<East Value="11000" Units="m" />
 					</relativeLocation>
 					
 				</Location>
