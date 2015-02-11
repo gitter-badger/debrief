@@ -2,3 +2,6 @@
 /Freq_BlueTrack.rep
 /Freq_RedTrack.rep
 /control_file.xml
+/HiFreq_RedTrack.rep
+*.csv
+*.rep
