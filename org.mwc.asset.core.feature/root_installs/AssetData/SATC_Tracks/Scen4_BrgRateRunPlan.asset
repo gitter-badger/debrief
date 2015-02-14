@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Scenario Name="Narrowband Tracking Scenario (High_BRate)" xmlns="http://www.mwc.org/asset"
+<Scenario Name="Scen4" xmlns="http://www.mwc.org/asset"
 	StartTime="2010-01-12T12:00:00Z" Created="2010-01-19T12:13:14Z"
 	ShowActivity="false" ShowStatus="true">
 	<StepTime Units="seconds" Value="47"></StepTime>
@@ -33,32 +33,32 @@
 			<Status Course="320" Fuel="100">
 				<Location>
 					<relativeLocation>
-						<North Value="12000" Units="m" />
-						<East Value="16000" Units="m" />
+						<North Value="0.0" Units="m" />
+						<East Value="0.0" Units="m" />
 					</relativeLocation>
 					
 				</Location>
-				<Speed Value="9" Units="kts" />
+				<Speed Value="8" Units="kts" />
 			</Status>
 			<Waterfall Name="subject route">
 				<Move Name="leg one" Course="320">
-					<Vector Value="5.7" Units="nm" /></Move>
+					<Vector Value="4" Units="nm" /></Move>
 				<Move Name="leg two" Course="350">
-					<Vector Value="9.75" Units="nm" /></Move>
+					<Vector Value="4" Units="nm" /></Move>
 				<Move Name="leg three" Course="310">
+					<Vector Value="4" Units="nm" /></Move>
+				<Move Name="leg four" Course="050">
 					<Vector Value="4" Units="nm" /></Move>
 			</Waterfall>
 			<RadiatedCharacteristics>
 				<Narrowband BaseNoiseLevel="100" Frequency="150" /></RadiatedCharacteristics>
-
-
 			<SurfaceMovementCharacteristics Name=""
 				FuelUsageRate="0.0">
 				<MinSpeed Value="0" Units="kts" />
 				<MaxSpeed Value="20" Units="kts" />
 				<AccelerationRate Value="1" Units="kt/s" />
 				<DecelerationRate Value="1" Units="kt/s" />
-				<TurningCircle Value="800" Units="m"></TurningCircle>
+				<TurningCircle Value="2800" Units="m"></TurningCircle>
 			</SurfaceMovementCharacteristics>
 		</Surface>
 		<Surface Name="SENSOR">
@@ -76,23 +76,21 @@
 					<SteadyTime Value="0.0" Units="millis" />
 				</NarrowbandSensor>
 			</SensorFit>
-			<Status Course="205" Fuel="100">
+			<Status Course="90" Fuel="100">
 				<Location>
 					<relativeLocation>
-						<North Value="24000" Units="m" />
-						<East Value="11000" Units="m" />
+						<North Value="2000" Units="m" />
+						<East Value="-15000" Units="m" />
 					</relativeLocation>
 					
 				</Location>
-				<Speed Value="12" Units="kts" />
+				<Speed Value="8" Units="kts" />
 			</Status>
 			<Waterfall Name="sensor route">
-				<Move Name="leg one" Course="200">
-					<Vector Value="5" Units="nm" /></Move>
-				<Move Name="leg two" Course="310">
+				<Move Name="leg one" Course="90">
 					<Vector Value="6" Units="nm" /></Move>
-				<Move Name="leg three" Course="60">
-					<Vector Value="10" Units="nm" /></Move>
+				<Move Name="leg two" Course="30">
+					<Vector Value="14" Units="nm" /></Move>
 			</Waterfall>
 
 
@@ -103,7 +101,7 @@
 				<MaxSpeed Value="20" Units="kts" />
 				<AccelerationRate Value="1" Units="kt/s" />
 				<DecelerationRate Value="1" Units="kt/s" />
-				<TurningCircle Value="800" Units="m"></TurningCircle>
+				<TurningCircle Value="1800" Units="m"></TurningCircle>
 			</SurfaceMovementCharacteristics>
 		</Surface>
 	</Participants>

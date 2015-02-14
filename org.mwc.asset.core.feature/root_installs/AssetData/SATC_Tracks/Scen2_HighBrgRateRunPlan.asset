@@ -2,7 +2,7 @@
 <Scenario Name="Narrowband Tracking Scenario (High_BRate)" xmlns="http://www.mwc.org/asset"
 	StartTime="2010-01-12T12:00:00Z" Created="2010-01-19T12:13:14Z"
 	ShowActivity="false" ShowStatus="true">
-	<StepTime Units="seconds" Value="60"></StepTime>
+	<StepTime Units="seconds" Value="130"></StepTime>
 	<Environment Name="token" AtmosphericAttenuation="VERY_CLEAR"
 		SeaState="1">
 		<VisualLookupEnvironment Name="Easy to see">
@@ -33,18 +33,18 @@
 			<Status Course="320" Fuel="100">
 				<Location>
 					<relativeLocation>
-						<North Value="0.0" Units="m" />
-						<East Value="0.0" Units="m" />
+						<North Value="12000" Units="m" />
+						<East Value="16000" Units="m" />
 					</relativeLocation>
 					
 				</Location>
-				<Speed Value="8" Units="kts" />
+				<Speed Value="9" Units="kts" />
 			</Status>
 			<Waterfall Name="subject route">
 				<Move Name="leg one" Course="320">
 					<Vector Value="5.7" Units="nm" /></Move>
 				<Move Name="leg two" Course="350">
-					<Vector Value="8" Units="nm" /></Move>
+					<Vector Value="9.75" Units="nm" /></Move>
 				<Move Name="leg three" Course="310">
 					<Vector Value="4" Units="nm" /></Move>
 			</Waterfall>
@@ -80,17 +80,19 @@
 				<Location>
 					<relativeLocation>
 						<North Value="24000" Units="m" />
-						<East Value="12000" Units="m" />
+						<East Value="11000" Units="m" />
 					</relativeLocation>
 					
 				</Location>
-				<Speed Value="8" Units="kts" />
+				<Speed Value="12" Units="kts" />
 			</Status>
 			<Waterfall Name="sensor route">
-				<Move Name="leg one" Course="270">
-					<Vector Value="8" Units="nm" /></Move>
-				<Move Name="leg two" Course="220">
-					<Vector Value="12" Units="nm" /></Move>
+				<Move Name="leg one" Course="200">
+					<Vector Value="5" Units="nm" /></Move>
+				<Move Name="leg two" Course="310">
+					<Vector Value="6" Units="nm" /></Move>
+				<Move Name="leg three" Course="60">
+					<Vector Value="10" Units="nm" /></Move>
 			</Waterfall>
 
 

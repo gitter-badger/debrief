@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScenarioController OutputDirectory="root_installs/AssetData/SATC_Tracks/Output"
+	xmlns="http://www.mwc.org/asset">
+	<ScenarioGenerator></ScenarioGenerator>
+	<ObserverList>
+		<TimeObserver Name="Domesday Timer" Active="true">
+			<Duration Value="120" Units="minutes"></Duration>
+		</TimeObserver>
+		<DebriefReplayObserver Name="HiFreq_RedTrack"
+			record_detections="true" record_positions="true" Active="true"
+			record_decisions="false" file_name="HiFreq2_RedTrack">
+			<SubjectToTrack>
+				<Type Name="RED" />
+			</SubjectToTrack>
+		</DebriefReplayObserver>
+		<DebriefReplayObserver Name="HiFreq_BlueSensor"
+			record_detections="true" record_positions="false" Active="true"
+			record_decisions="false" file_name="HiFreq2_BlueSensor">
+			<SubjectToTrack>
+				<Type Name="BLUE" />
+			</SubjectToTrack>
+		</DebriefReplayObserver>
+		<DebriefReplayObserver Name="HiFreq_BlueCuts"
+			record_detections="false" record_positions="true" Active="true"
+			record_decisions="false" file_name="HiFreq2_BlueTrack">
+			<SubjectToTrack>
+				<Type Name="BLUE" />
+			</SubjectToTrack>
+		</DebriefReplayObserver>
+		<CSVTrackObserver Name="HiFreq_RedTrack"
+			record_detections="true" record_positions="true" Active="true"
+			record_decisions="false" file_name="HiFreq2_RedTrack">
+			<SubjectToTrack>
+				<Type Name="RED" />
+			</SubjectToTrack>
+		</CSVTrackObserver>
+		<CSVTrackObserver Name="HiFreq_BlueSensor"
+			record_detections="true" record_positions="false" Active="true"
+			record_decisions="false" file_name="HiFreq2_BlueSensor">
+			<SubjectToTrack>
+				<Type Name="BLUE" />
+			</SubjectToTrack>
+		</CSVTrackObserver>
+		<CSVTrackObserver Name="HiFreq_BlueCuts"
+			record_detections="false" record_positions="true" Active="true"
+			record_decisions="false" file_name="HiFreq2_BlueTrack">
+			<SubjectToTrack>
+				<Type Name="BLUE" />
+			</SubjectToTrack>
+		</CSVTrackObserver>
+		<TrackPlotObserver Active="true" Name="Scen2">
+			<GridDelta Value="1" Units="km" />
+		</TrackPlotObserver>
+	</ObserverList>
+</ScenarioController>
