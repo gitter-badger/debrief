@@ -105,6 +105,11 @@ public class TrackPlotObserver extends RecordToFileObserverType implements
 	 * whether to only show the final positions
 	 */
 	private boolean _onlyFinalPositions = false;
+	
+	/** whether to append a DTG to the filename - to make it unique
+	 * 
+	 */
+	private boolean _appendDTG = true;
 
 	/***************************************************************
 	 * constructor
@@ -168,6 +173,16 @@ public class TrackPlotObserver extends RecordToFileObserverType implements
 	public WorldDistance getGridDelta()
 	{
 		return _gridDelta;
+	}
+
+	public boolean getAppendDTG()
+	{
+		return _appendDTG;
+	}
+
+	public void setAppendDTG(boolean appendDTG)
+	{
+		this._appendDTG = appendDTG;
 	}
 
 	public void setGridDelta(WorldDistance _gridDelta)
@@ -313,9 +328,16 @@ public class TrackPlotObserver extends RecordToFileObserverType implements
 		{
 			res = "res_"
 					+ scenario_name
-					+ "_"
-					+ MWC.Utilities.TextFormatting.DebriefFormatDateTime.toString(System
-							.currentTimeMillis()) + ".png";
+					+ "_";
+			
+			if(_appendDTG)
+			{
+				res += MWC.Utilities.TextFormatting.DebriefFormatDateTime.toString(System
+						.currentTimeMillis());
+			}
+			
+			res += ".png";
+			
 		}
 		else
 			res = getFileName();

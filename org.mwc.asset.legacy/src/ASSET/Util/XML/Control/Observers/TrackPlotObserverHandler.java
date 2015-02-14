@@ -40,12 +40,15 @@ abstract class TrackPlotObserverHandler extends CoreFileObserverHandler
   private final static String SHOW_SCALE = "show_scale";
   private static final String GRID_DELTA = "GridDelta";
 
+	private static final String APPEND_DTG = "append_dtg";
+
   int _myWid = 400;
   int _myHeight = 400;
   WorldDistance _gridDelta;
   boolean _showPositions = true;
   boolean _showScale = true;
   boolean _finalPositions = false;
+  boolean _appendDTG = true;
 
 
   public TrackPlotObserverHandler()
@@ -84,6 +87,13 @@ abstract class TrackPlotObserverHandler extends CoreFileObserverHandler
         _finalPositions = val;
       }
     });
+    addAttributeHandler(new HandleBooleanAttribute(APPEND_DTG)
+    {
+      public void setValue(final String name, final boolean val)
+      {
+        _appendDTG = val;
+      }
+    });
     addAttributeHandler(new HandleBooleanAttribute(SHOW_POS)
     {
       public void setValue(final String name, final boolean val)
@@ -113,6 +123,8 @@ abstract class TrackPlotObserverHandler extends CoreFileObserverHandler
                                                           _finalPositions,
                                                           _name, _isActive);
 
+    timeO.setAppendDTG(_appendDTG);
+    
     setObserver(timeO);
 
     super.elementClosed();
@@ -126,6 +138,7 @@ abstract class TrackPlotObserverHandler extends CoreFileObserverHandler
     _showPositions = true;
     _showScale = true;
     _finalPositions = false;
+    _appendDTG = true;
   }
 
 

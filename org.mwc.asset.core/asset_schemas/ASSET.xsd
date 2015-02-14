@@ -3570,34 +3570,35 @@
 				inherited</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="CoreFileObserverType"> </xs:extension>
-			<xs:sequence>
-				<xs:element name="SubjectToTrack" type="TargetTypeType" minOccurs="0">
+			<xs:extension base="CoreFileObserverType"> 
+				<xs:sequence>
+					<xs:element name="SubjectToTrack" type="TargetTypeType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The type of target we want to record a
+								narrative full
+								(or omit to record all)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="record_detections" type="xs:boolean" use="required">
 					<xs:annotation>
-						<xs:documentation>The type of target we want to record a
-							narrative full
-							(or omit to record all)</xs:documentation>
+						<xs:documentation>Whether to record detections to file
+						</xs:documentation>
 					</xs:annotation>
-				</xs:element>
-			</xs:sequence>
-			<xs:attribute name="record_detections" type="xs:boolean" use="required">
-				<xs:annotation>
-					<xs:documentation>Whether to record detections to file
-					</xs:documentation>
-				</xs:annotation>
-			</xs:attribute>
-			<xs:attribute name="record_decisions" type="xs:boolean" use="required">
-				<xs:annotation>
-					<xs:documentation>Whether to record decisions to file
-					</xs:documentation>
-				</xs:annotation>
-			</xs:attribute>
-			<xs:attribute name="record_positions" type="xs:boolean" use="required">
-				<xs:annotation>
-					<xs:documentation>Whether to record positions to file
-					</xs:documentation>
-				</xs:annotation>
-			</xs:attribute>
+				</xs:attribute>
+				<xs:attribute name="record_decisions" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>Whether to record decisions to file
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="record_positions" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>Whether to record positions to file
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="DebriefReplayObserverType">
@@ -3744,6 +3745,13 @@
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attribute name="only_final_positions" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>Only show the final vessel positions - don't
+							show the
+							complete tracks.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="append_dtg" type="xs:boolean" use="optional" default="true">
 					<xs:annotation>
 						<xs:documentation>Only show the final vessel positions - don't
 							show the
