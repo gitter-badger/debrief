@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<plot xmlns="http://www.debrief.info/plot" Created="Tue Feb 03 11:36:13 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
-<details Text="Saved with Debrief version dated Tue Feb 03 10:58:53 GMT 2015"/>
+<plot xmlns="http://www.debrief.info/plot" Created="Fri Feb 20 10:55:09 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
+<details Text="Saved with Debrief version dated Fri Feb 20 10:34:34 GMT 2015"/>
 <session>
 <layers>
-<composite_track InterpolatePoints="false" LabelIntervalMillis="900000" LineStyle="0" LineThickness="2" LinkPositions="true" Name="SENSOR_PLANNED" NameAtStart="true" NameLocation="Right" NameVisible="false" PlotArrayCentre="false" PositionsVisible="true" SensorsVisible="true" SolutionsVisible="true" StartTime="100112 120000" Symbol="Submarine" SymbolIntervalMillis="300000" Visible="false">
+<composite_track InterpolatePoints="false" LabelIntervalMillis="900000" LineStyle="0" LineThickness="2" LinkPositions="true" Name="SENSOR_PLANNED" NameAtStart="true" NameLocation="Right" NameVisible="false" PlotArrayCentre="false" PositionsVisible="true" SensorsVisible="true" SolutionsVisible="true" StartTime="100112 120000" Symbol="Submarine" SymbolIntervalMillis="300000" Visible="true">
 <colour Value="BLUE"/>
 <SymbolColor Value="BLUE"/>
 <font Bold="false" Family="Sans Serif" Italic="false" Size="9"/>
@@ -44,11 +44,11 @@
 <layer LineThickness="0" Name="Chart Features" Visible="true">
 <grid PlotLabels="true" Visible="true">
 <font Bold="false" Family="Sans Serif" Italic="false" Size="8"/>
-<Delta Units="nm" Value="1.0000000"/>
+<Delta Units="nm" Value="2.0000000"/>
 <colour CustomBlue="77" CustomGreen="77" CustomRed="77" Value="custom"/>
 </grid>
 </layer>
-<composite_track InterpolatePoints="false" LabelIntervalMillis="900000" LineStyle="0" LineThickness="2" LinkPositions="true" Name="SUBJECT_PLANNED" NameAtStart="true" NameLocation="Right" NameVisible="false" PlotArrayCentre="false" PositionsVisible="true" SensorsVisible="true" SolutionsVisible="true" StartTime="100112 120000" Symbol="Submarine" SymbolIntervalMillis="300000" Visible="false">
+<composite_track InterpolatePoints="false" LabelIntervalMillis="900000" LineStyle="0" LineThickness="2" LinkPositions="true" Name="SUBJECT_PLANNED" NameAtStart="true" NameLocation="Right" NameVisible="false" PlotArrayCentre="false" PositionsVisible="true" SensorsVisible="true" SolutionsVisible="true" StartTime="100112 120000" Symbol="Submarine" SymbolIntervalMillis="300000" Visible="true">
 <colour Value="RED"/>
 <SymbolColor Value="CYAN"/>
 <font Bold="false" Family="Sans Serif" Italic="false" Size="9"/>
@@ -69,19 +69,40 @@
 </Origin>
 </composite_track>
 <layer LineThickness="0" Name="Annotations" Visible="true"/>
+<layer LineThickness="0" Name="Markers" Visible="false">
+<textlabel Label="Fixed Sensor" LabelLocation="Top" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
+<colour Value="PURPLE"/>
+<font Bold="false" Family="Arial" Italic="false" Size="12"/>
+<centre>
+<shortLocation Depth="0.000" Lat="0.0001041" Long="-30.0499586"/>
+</centre>
+</textlabel>
+<textlabel Label="Red Finish" LabelLocation="Bottom" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
+<colour Value="PURPLE"/>
+<font Bold="false" Family="Arial" Italic="false" Size="12"/>
+<centre>
+<shortLocation Depth="0.000" Lat="-0.0707007" Long="-30.1207200"/>
+</centre>
+</textlabel>
+<textlabel Label="Red Start" LabelLocation="Bottom" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
+<colour Value="PURPLE"/>
+<font Bold="false" Family="Arial" Italic="false" Size="12"/>
+<centre>
+<shortLocation Depth="0.000" Lat="0.0000002" Long="-30.0001101"/>
+</centre>
+</textlabel>
+</layer>
 </layers>
 <projection Border="1.100" PrimaryOriented="false" PrimaryOrigin="false" Type="Flat">
 <tl>
-<shortLocation Depth="0.000" Lat="0.0498847" Long="-30.2160547"/>
+<shortLocation Depth="0.000" Lat="0.0158141" Long="-30.1252190"/>
 </tl>
 <br>
-<shortLocation Depth="0.000" Lat="-0.1434429" Long="-29.9037036"/>
+<shortLocation Depth="0.000" Lat="-0.0921300" Long="-30.0045083"/>
 </br>
 </projection>
 <gui>
-<tote>
-<secondary Name="SUBJECT"/>
-</tote>
+<tote/>
 <component Type="Stepper">
 <property Name="GREEN" Value="64"/>
 <property Name="DateFormat" Value="ddHHmm"/>
@@ -111,7 +132,7 @@
 <property Name="Arcs" Value="-180"/>
 </component>
 <Background>
-<colour Value="LIGHT_GREY"/>
+<colour Value="BLACK"/>
 </Background>
 </gui>
 </session>

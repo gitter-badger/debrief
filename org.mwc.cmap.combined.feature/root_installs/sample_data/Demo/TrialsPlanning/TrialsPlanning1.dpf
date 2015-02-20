@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<plot xmlns="http://www.debrief.info/plot" Created="Fri Feb 20 10:15:45 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
-<details Text="Saved with Debrief version dated Fri Feb 20 10:08:43 GMT 2015"/>
+<plot xmlns="http://www.debrief.info/plot" Created="Fri Feb 20 10:54:53 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
+<details Text="Saved with Debrief version dated Fri Feb 20 10:34:34 GMT 2015"/>
 <session>
 <layers>
 <layer LineThickness="0" Name="Chart Features" Visible="true">
 <grid PlotLabels="true" Visible="true">
 <font Bold="false" Family="Sans Serif" Italic="false" Size="8"/>
-<Delta Units="nm" Value="5.0000000"/>
+<Delta Units="nm" Value="2.0000000"/>
 <colour Value="GREY"/>
 </grid>
 </layer>
