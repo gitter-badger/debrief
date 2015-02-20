@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<plot xmlns="http://www.debrief.info/plot" Created="Wed Feb 04 16:33:48 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
-<details Text="Saved with Debrief version dated Tue Feb 03 15:45:03 GMT 2015"/>
+<plot xmlns="http://www.debrief.info/plot" Created="Fri Feb 20 10:15:45 GMT 2015" Name="Debrief Plot" PlotId="1369149093378">
+<details Text="Saved with Debrief version dated Fri Feb 20 10:08:43 GMT 2015"/>
 <session>
 <layers>
 <layer LineThickness="0" Name="Chart Features" Visible="true">
@@ -32,35 +32,35 @@
 </composite_track>
 <externalDatafile DataType="NELayer" LayerName="Natural Earth" LayerPath="" Visible="true"/>
 <layer LineThickness="0" Name="Markers" Visible="true">
+<textlabel Label="Fixed Sensor" LabelLocation="Top" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
+<colour Value="PURPLE"/>
+<font Bold="false" Family="Arial" Italic="false" Size="12"/>
+<centre>
+<shortLocation Depth="0.000" Lat="0.0001041" Long="-30.0499586"/>
+</centre>
+</textlabel>
 <textlabel Label="Red Finish" LabelLocation="Bottom" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
 <colour Value="PURPLE"/>
-<font Bold="false" Family="Sans Serif" Italic="false" Size="9"/>
+<font Bold="false" Family="Arial" Italic="false" Size="12"/>
 <centre>
 <shortLocation Depth="0.000" Lat="-0.0707007" Long="-30.1207200"/>
 </centre>
 </textlabel>
 <textlabel Label="Red Start" LabelLocation="Bottom" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
 <colour Value="PURPLE"/>
-<font Bold="false" Family="Sans Serif" Italic="false" Size="9"/>
+<font Bold="false" Family="Arial" Italic="false" Size="12"/>
 <centre>
 <shortLocation Depth="0.000" Lat="0.0000002" Long="-30.0001101"/>
-</centre>
-</textlabel>
-<textlabel Label="Fixed Sensor" LabelLocation="Top" LabelVisible="true" Scale="Medium" Symbol="Square" SymbolVisible="true" Visible="true">
-<colour Value="PURPLE"/>
-<font Bold="false" Family="Sans Serif" Italic="false" Size="9"/>
-<centre>
-<shortLocation Depth="0.000" Lat="0.0001041" Long="-30.0499586"/>
 </centre>
 </textlabel>
 </layer>
 </layers>
 <projection Border="1.100" PrimaryOriented="false" PrimaryOrigin="false" Type="Flat">
 <tl>
-<shortLocation Depth="0.000" Lat="0.1192306" Long="-30.1862729"/>
+<shortLocation Depth="0.000" Lat="0.0865931" Long="-30.2234259"/>
 </tl>
 <br>
-<shortLocation Depth="0.000" Lat="-0.1513772" Long="-29.9010195"/>
+<shortLocation Depth="0.000" Lat="-0.1610938" Long="-29.9059361"/>
 </br>
 </projection>
 <gui>
@@ -94,7 +94,7 @@
 <property Name="Arcs" Value="-180"/>
 </component>
 <Background>
-<colour Value="LIGHT_GREY"/>
+<colour Value="BLACK"/>
 </Background>
 </gui>
 </session>
